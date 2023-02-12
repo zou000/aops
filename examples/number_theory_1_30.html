@@ -1,0 +1,530 @@
+<html>
+ <head>
+  <base href="https://artofproblemsolving.com"/>
+ </head>
+ <body>
+  <h3>
+   number_theory_toc.html 1-30
+  </h3>
+  <ol>
+   <li>
+    <hr/>
+    2007 iTest Problems/Problem 32
+    <p>
+     When a rectangle frames a parabola such that a side of the rectangle is parallel to the parabola's axis of symmetry, the parabola divides the rectangle into regions whose areas are in the ratio
+     <img alt="$2$" class="latex" height="12" src="//latex.artofproblemsolving.com/4/1/c/41c544263a265ff15498ee45f7392c5f86c6d151.png" width="8">
+      to
+      <img alt="$1$" class="latex" height="12" src="//latex.artofproblemsolving.com/d/c/e/dce34f4dfb2406144304ad0d6106c5382ddd1446.png" style="vertical-align: 0px" width="8"/>
+      . How many integer values of k are there such that
+      <img alt="$0&lt;k\leq 2007$" class="latex" height="15" src="//latex.artofproblemsolving.com/2/7/a/27a6de3e118d1198bde6e5943c5bc72325a3387d.png" style="vertical-align: -2px" width="103"/>
+      and the area between the parabola
+      <img alt="$y=k-x^2$" class="latex" height="18" src="//latex.artofproblemsolving.com/d/0/9/d09ce2d1852be13ce40562bac856280d4c31b5b9.png" style="vertical-align: -3px" width="82"/>
+      and the
+      <img alt="$x$" class="latex" height="8" src="//latex.artofproblemsolving.com/2/6/e/26eeb5258ca5099acf8fe96b2a1049c48c89a5e6.png" width="10"/>
+      -axis is an integer?
+     </img>
+    </p>
+    <p>
+     <img alt='[asy] import graph; 	size(300); 	defaultpen(linewidth(0.8)+fontsize(10)); 	real k=1.5; 	real endp=sqrt(k); 	real f(real x) { 	return k-x^2; 	} 	path parabola=graph(f,-endp,endp)--cycle; 	filldraw(parabola, lightgray); 	draw((endp,0)--(endp,k)--(-endp,k)--(-endp,0)); 	label("Region I", (0,2*k/5)); 	label("Box II", (51/64*endp,13/16*k)); 	label("area(I) = $\frac23$\,area(II)",(5/3*endp,k/2));[/asy]' class="latexcenter" height="198" src="//latex.artofproblemsolving.com/d/0/d/d0d959a4f9430cd527c5591f1849d808af02a241.png" width="502"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2002 AMC 10B Problems/Problem 14
+    <p>
+     The number
+     <img alt="$25^{64}\cdot 64^{25}$" class="latex" height="15" src="//latex.artofproblemsolving.com/4/e/9/4e9de7501af1f289ba226fca90b6d1194af77518.png" style="vertical-align: 0px" width="76">
+      is the square of a positive integer
+      <img alt="$N$" class="latex" height="12" src="//latex.artofproblemsolving.com/f/c/9/fc97ef67268cd4e91bacdf12b8901d7036c9a056.png" width="16"/>
+      . In decimal representation, the sum of the digits of
+      <img alt="$N$" class="latex" height="12" src="//latex.artofproblemsolving.com/f/c/9/fc97ef67268cd4e91bacdf12b8901d7036c9a056.png" width="16"/>
+      is
+     </img>
+    </p>
+    <p>
+     <img alt="$\mathrm{(A) \ } 7\qquad \mathrm{(B) \ } 14\qquad \mathrm{(C) \ } 21\qquad \mathrm{(D) \ } 28\qquad \mathrm{(E) \ } 35$" class="latex" height="18" src="//latex.artofproblemsolving.com/1/2/9/129c58dc0f5511a544b9285d6e9ca3c8885ac11a.png" style="vertical-align: -4px" width="378"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2021 CMC 12A Problems/Problem 7
+    <p>
+     It is known that every positive integer can be represented as the sum of at most
+     <img alt="$4$" class="latex" height="12" src="//latex.artofproblemsolving.com/c/7/c/c7cab1a05e1e0c1d51a6a219d96577a16b7abf9d.png" style="vertical-align: 0px" width="9">
+      squares. What is the sum of the
+      <img alt="$2$" class="latex" height="12" src="//latex.artofproblemsolving.com/4/1/c/41c544263a265ff15498ee45f7392c5f86c6d151.png" width="8"/>
+      smallest integers which cannot be represented as the sum of fewer than
+      <img alt="$4$" class="latex" height="12" src="//latex.artofproblemsolving.com/c/7/c/c7cab1a05e1e0c1d51a6a219d96577a16b7abf9d.png" style="vertical-align: 0px" width="9"/>
+      squares?
+     </img>
+    </p>
+    <p>
+     <img alt="$\textbf{(A) } 22\qquad\textbf{(B) } 23\qquad\textbf{(C) } 24\qquad\textbf{(D) } 25\qquad\textbf{(E) } 26\qquad$" class="latex" height="17" src="//latex.artofproblemsolving.com/3/1/d/31dba9b989f511666c5f27f5232b539eb7a7a00e.png" style="vertical-align: -4px" width="398"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2007 AMC 10A Problems/Problem 17
+    <p>
+     Suppose that
+     <img alt="$m$" class="latex" height="8" src="//latex.artofproblemsolving.com/f/5/0/f5047d1e0cbb50ec208923a22cd517c55100fa7b.png" width="15">
+      and
+      <img alt="$n$" class="latex" height="8" src="//latex.artofproblemsolving.com/1/7/4/174fadd07fd54c9afe288e96558c92e0c1da733a.png" width="10"/>
+      are positive
+      <a href="/wiki/index.php/Integer" title="Integer">
+       integers
+      </a>
+      such that
+      <img alt="$75m = n^{3}$" class="latex" height="15" src="//latex.artofproblemsolving.com/7/c/f/7cf6f8fa48b22def853a427ff1d67020201621dd.png" width="75"/>
+      . What is the minimum possible value of
+      <img alt="$m + n$" class="latex" height="12" src="//latex.artofproblemsolving.com/5/3/b/53bf1afcb274a3bb84338109fffec8a1f1c02008.png" style="vertical-align: -1px" width="48"/>
+      ?
+     </img>
+    </p>
+    <p>
+     <img alt="$\text{(A)}\ 15 \qquad \text{(B)}\ 30 \qquad \text{(C)}\ 50 \qquad \text{(D)}\ 60 \qquad \text{(E)}\ 5700$" class="latex" height="17" src="//latex.artofproblemsolving.com/a/7/f/a7f3ee7e10ebd4f754902f39f43e6afc3b960cb1.png" style="vertical-align: -4px" width="393"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2002 AMC 10A Problems/Problem 15
+    <p>
+     Using the digits 1, 2, 3, 4, 5, 6, 7, and 9, form 4 two-digit prime numbers, using each digit only once. What is the sum of the 4 prime numbers?
+    </p>
+    <p>
+     <img alt="$\text{(A)}\ 150 \qquad \text{(B)}\ 160 \qquad \text{(C)}\ 170 \qquad \text{(D)}\ 180 \qquad \text{(E)}\ 190$" class="latex" height="17" src="//latex.artofproblemsolving.com/5/4/4/5441ea7a787a81c3a783a0bbf51eed4810128ccd.png" style="vertical-align: -4px" width="421">
+     </img>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2015 UNCO Math Contest II Problems/Problem 1
+    <p>
+     The sum of three consecutive integers is
+     <img alt="$54$" class="latex" height="13" src="//latex.artofproblemsolving.com/b/1/c/b1cb5bdce2d06d2419066a2b55ab01d824217bd2.png" style="vertical-align: 0px" width="18">
+      . What is the smallest of the three integers?
+     </img>
+    </p>
+    <p>
+     <br/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2007 iTest Problems/Problem 3
+    <p>
+     An abundant number is a natural number that's proper divisors' sum is greater than the number. Which one of the following natural numbers is an abundant number?
+    </p>
+    <p>
+     <img alt="$\mathrm{(A)}\, 14\quad\mathrm{(B)}\, 28\quad\mathrm{(C)}\, 56$" class="latex" height="18" src="//latex.artofproblemsolving.com/6/c/9/6c9dfdf1fb6bcc132d4ae33a3e00413c797d21f0.png" style="vertical-align: -4px" width="178">
+     </img>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2003 AMC 10A Problems/Problem 16
+    <p>
+     What is the units digit of
+     <img alt="$13^{2003}$" class="latex" height="15" src="//latex.artofproblemsolving.com/8/9/a/89a88b9bc75c780575ebc560deacbfd1c5ae0dd5.png" style="vertical-align: 0px" width="43">
+      ?
+     </img>
+    </p>
+    <p>
+     <img alt="$\mathrm{(A) \ } 1\qquad \mathrm{(B) \ } 3\qquad \mathrm{(C) \ } 7\qquad \mathrm{(D) \ } 8\qquad \mathrm{(E) \ } 9$" class="latex" height="18" src="//latex.artofproblemsolving.com/4/2/b/42b675f3f1cb58f8e41c008957f931d460608783.png" style="vertical-align: -4px" width="342"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2010 AMC 12A Problems/Problem 11
+    <p>
+     The solution of the equation
+     <img alt="$7^{x+7} = 8^x$" class="latex" height="15" src="//latex.artofproblemsolving.com/4/8/d/48de8e61c1c6065c2944d909d7343bd8c40a41cb.png" width="74">
+      can be expressed in the form
+      <img alt="$x = \log_b 7^7$" class="latex" height="19" src="//latex.artofproblemsolving.com/4/1/b/41bf9e256ab9b3dc393cc5d4434fd349a26eb204.png" style="vertical-align: -4px" width="83"/>
+      . What is
+      <img alt="$b$" class="latex" height="12" src="//latex.artofproblemsolving.com/8/1/3/8136a7ef6a03334a7246df9097e5bcc31ba33fd2.png" width="8"/>
+      ?
+     </img>
+    </p>
+    <p>
+     <img alt="$\textbf{(A)}\ \frac{7}{15} \qquad \textbf{(B)}\ \frac{7}{8} \qquad \textbf{(C)}\ \frac{8}{7} \qquad \textbf{(D)}\ \frac{15}{8} \qquad \textbf{(E)}\ \frac{15}{7}$" class="latex" height="38" src="//latex.artofproblemsolving.com/9/7/a/97aed20a1943ea7b60c42d6ff01ce1e9e328d13e.png" style="vertical-align: -13px" width="394"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2002 AMC 10B Problems/Problem 1
+    <p>
+     The ratio
+     <img alt="$\frac{2^{2001}\cdot3^{2003}}{6^{2002}}$" class="latex" height="39" src="//latex.artofproblemsolving.com/3/8/f/38f34d3be1e04d25a952d697601a8a1b41b1752f.png" style="vertical-align: -12px" width="88">
+      is:
+     </img>
+    </p>
+    <p>
+     <img alt="$\mathrm{(A) \ } 1/6\qquad \mathrm{(B) \ } 1/3\qquad \mathrm{(C) \ } 1/2\qquad \mathrm{(D) \ } 2/3\qquad \mathrm{(E) \ } 3/2$" class="latex" height="18" src="//latex.artofproblemsolving.com/3/0/a/30a3f9d9da16889ce7a887c9594853573e6f2782.png" style="vertical-align: -4px" width="432"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    1989 AHSME Problems/Problem 16
+    <p>
+     A lattice point is a point in the plane with integer coordinates. How many lattice points are on the line segment whose endpoints are
+     <img alt="$(3,17)$" class="latex" height="18" src="//latex.artofproblemsolving.com/0/3/6/036516a32a241ef7b66077ba4f5d0cdf5e69da5a.png" style="vertical-align: -4px" width="47">
+      and
+      <img alt="$(48,281)$" class="latex" height="18" src="//latex.artofproblemsolving.com/3/4/0/340be4991063c82361016bae0ac09444189faeb0.png" style="vertical-align: -4px" width="66"/>
+      ? (Include both endpoints of the segment in your count.)
+     </img>
+    </p>
+    <p>
+     <img alt="$\textbf{(A)}\ 2\qquad\textbf{(B)}\ 4\qquad\textbf{(C)}\ 6\qquad\textbf{(D)}\ 16\qquad\textbf{(E)}\ 46$" class="latex" height="17" src="//latex.artofproblemsolving.com/2/c/e/2ceb8d19b32063a376a776a4b93256b04f895bc1.png" style="vertical-align: -4px" width="366"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2014 UNCO Math Contest II Problems/Problem 1
+    <p>
+     The Duchess had a child on May 1st every two years until she had five children. This year the
+youngest is
+     <img alt="$1$" class="latex" height="12" src="//latex.artofproblemsolving.com/d/c/e/dce34f4dfb2406144304ad0d6106c5382ddd1446.png" style="vertical-align: 0px" width="8">
+      and the ages of the children are
+      <img alt="$1, 3, 5, 7$" class="latex" height="16" src="//latex.artofproblemsolving.com/6/1/4/614196557e509962392da887e03234fcba587680.png" style="vertical-align: -3px" width="60"/>
+      , and
+      <img alt="$9$" class="latex" height="12" src="//latex.artofproblemsolving.com/b/f/2/bf2c9074b396e3af0dea52d792660eea1c77f10f.png" width="8"/>
+      . Alice notices that the sum of the ages
+is a perfect square:
+      <img alt="$1 + 3 + 5 + 7 + 9 = 25$" class="latex" height="14" src="//latex.artofproblemsolving.com/0/c/c/0cc89149d2d2791e27758ece680a98e55cc76e8d.png" style="vertical-align: -1px" width="176"/>
+      . How old will the youngest be the next time the sum of
+the ages of the five children is a perfect square, and what is that perfect square?
+     </img>
+    </p>
+    <p>
+     <br/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    1973 AHSME Problems/Problem 6
+    <p>
+     If 554 is the base
+     <img alt="$b$" class="latex" height="12" src="//latex.artofproblemsolving.com/8/1/3/8136a7ef6a03334a7246df9097e5bcc31ba33fd2.png" width="8">
+      representation of the square of the number whose base
+      <img alt="$b$" class="latex" height="12" src="//latex.artofproblemsolving.com/8/1/3/8136a7ef6a03334a7246df9097e5bcc31ba33fd2.png" width="8"/>
+      representation is 24, then
+      <img alt="$b$" class="latex" height="12" src="//latex.artofproblemsolving.com/8/1/3/8136a7ef6a03334a7246df9097e5bcc31ba33fd2.png" width="8"/>
+      , when written in base 10, equals
+     </img>
+    </p>
+    <p>
+     <img alt="$\textbf{(A)}\ 6\qquad\textbf{(B)}\ 8\qquad\textbf{(C)}\ 12\qquad\textbf{(D)}\ 14\qquad\textbf{(E)}\ 16$" class="latex" height="17" src="//latex.artofproblemsolving.com/0/4/7/0479ae228fa437d55dc18c781def4c8d7ece2854.png" style="vertical-align: -4px" width="376"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    1951 AHSME Problems/Problem 15
+    <p>
+     The largest number by which the expression
+     <img alt="$n^3 - n$" class="latex" height="15" src="//latex.artofproblemsolving.com/c/5/c/c5cdda1cf99bd51526907fd53319d6edfa3f009e.png" width="51">
+      is divisible for all possible integral values of
+      <img alt="$n$" class="latex" height="8" src="//latex.artofproblemsolving.com/1/7/4/174fadd07fd54c9afe288e96558c92e0c1da733a.png" width="10"/>
+      , is:
+     </img>
+    </p>
+    <p>
+     <img alt="$\textbf{(A)}\ 2 \qquad\textbf{(B)}\ 3 \qquad\textbf{(C)}\ 4 \qquad\textbf{(D)}\ 5 \qquad\textbf{(E)}\ 6$" class="latex" height="17" src="//latex.artofproblemsolving.com/3/b/a/3ba6a56dc31e5d08c42f2bc41757af3959bdb10c.png" style="vertical-align: -4px" width="348"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2006 iTest Problems/Problem 1
+    <p>
+     Find the number of positive integral divisors of 2006.
+    </p>
+    <p>
+     <img alt="$\mathrm{(A)}\, 8$" class="latex" height="18" src="//latex.artofproblemsolving.com/6/a/6/6a67991241cef39be0201fae282487a6177157b6.png" style="vertical-align: -4px" width="39">
+     </img>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    1988 AJHSME Problems/Problem 10
+    <p>
+     Chris' birthday is on a Thursday this year.  What day of the week will it be
+     <img alt="$60$" class="latex" height="12" src="//latex.artofproblemsolving.com/3/0/2/302e99c1c7cd91a6ae371139e5142ccef5977dca.png" width="17">
+      days after her birthday?
+     </img>
+    </p>
+    <p>
+     <img alt="$\text{(A)}\ \text{Monday} \qquad \text{(B)}\ \text{Wednesday} \qquad \text{(C)}\ \text{Thursday} \qquad \text{(D)}\ \text{Friday} \qquad \text{(E)}\ \text{Saturday}$" class="latex" height="17" src="//latex.artofproblemsolving.com/d/5/e/d5e3fa9eba452e653a6382a389743ff03c7add83.png" style="vertical-align: -4px" width="605"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2016 AMC 12B Problems/Problem 16
+    <p>
+     In how many ways can
+     <img alt="$345$" class="latex" height="13" src="//latex.artofproblemsolving.com/c/2/c/c2c72d8d34783d3db7b917c953ca22225f513823.png" style="vertical-align: 0px" width="26">
+      be written as the sum of an increasing sequence of two or more consecutive positive integers?
+     </img>
+    </p>
+    <p>
+     <img alt="$\textbf{(A)}\ 1\qquad\textbf{(B)}\ 3\qquad\textbf{(C)}\ 5\qquad\textbf{(D)}\ 6\qquad\textbf{(E)}\ 7$" class="latex" height="17" src="//latex.artofproblemsolving.com/f/b/a/fbae31ce1e7a9e307bbeab198ed0f576ef22fdfd.png" style="vertical-align: -4px" width="349"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    1991 AJHSME Problems/Problem 13
+    <p>
+     How many zeros are at the end of the product
+     <img alt="\[25\times 25\times 25\times 25\times 25\times 25\times 25\times 8\times 8\times 8?\]" class="latexcenter" height="12" src="//latex.artofproblemsolving.com/8/e/c/8ecd299812638ef3512de02d51d7e0f064dc7410.png" width="362">
+     </img>
+    </p>
+    <p>
+     <img alt="$\text{(A)}\ 3 \qquad \text{(B)}\ 6 \qquad \text{(C)}\ 9 \qquad \text{(D)}\ 10 \qquad \text{(E)}\ 12$" class="latex" height="17" src="//latex.artofproblemsolving.com/6/b/e/6bece4ba8d8809a2ebdb362a7725de079256feb3.png" style="vertical-align: -4px" width="348"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2018 UNM-PNM Statewide High School Mathematics Contest II Problems/Problem 2
+    <p>
+     Determine all positive integers
+     <img alt="$a$" class="latex" height="8" src="//latex.artofproblemsolving.com/c/7/d/c7d457e388298246adb06c587bccd419ea67f7e8.png" width="9">
+      such that
+      <img alt="$a &lt; 100$" class="latex" height="13" src="//latex.artofproblemsolving.com/8/5/8/858695221aa7d93bde60aed0bee88d9c09c55135.png" style="vertical-align: 0px" width="60"/>
+      and
+      <img alt="$a^3 + 23$" class="latex" height="16" src="//latex.artofproblemsolving.com/5/d/c/5dc30586c63c7e77123884d245e68f05b4628735.png" style="vertical-align: -1px" width="57"/>
+      is divisible by
+      <img alt="$24$" class="latex" height="12" src="//latex.artofproblemsolving.com/e/2/9/e290f2cba0ba0e11c0b91630da15a408da2fcf1c.png" style="vertical-align: 0px" width="18"/>
+      .
+     </img>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    1974 AHSME Problems/Problem 26
+    <p>
+     The number of distinct positive integral divisors of
+     <img alt="$(30)^4$" class="latex" height="19" src="//latex.artofproblemsolving.com/9/c/2/9c272995323d3bb2d05ac61745b0d38864436f97.png" style="vertical-align: -4px" width="38">
+      excluding
+      <img alt="$1$" class="latex" height="12" src="//latex.artofproblemsolving.com/d/c/e/dce34f4dfb2406144304ad0d6106c5382ddd1446.png" style="vertical-align: 0px" width="8"/>
+      and
+      <img alt="$(30)^4$" class="latex" height="19" src="//latex.artofproblemsolving.com/9/c/2/9c272995323d3bb2d05ac61745b0d38864436f97.png" style="vertical-align: -4px" width="38"/>
+      is
+     </img>
+    </p>
+    <p>
+     <img alt="$\mathrm{(A)\ } 100 \qquad \mathrm{(B) \ }125 \qquad \mathrm{(C) \  } 123 \qquad \mathrm{(D) \  } 30 \qquad \mathrm{(E) \  }\text{none of these}$" class="latex" height="18" src="//latex.artofproblemsolving.com/7/e/e/7ee45b01e95a0f46aa42421bf1f9a6f7ae3210b5.png" style="vertical-align: -4px" width="492"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2007 iTest Problems/Problem 14
+    <p>
+     Let
+     <img alt="$\phi(n)$" class="latex" height="18" src="//latex.artofproblemsolving.com/e/d/a/edae70ddedf89e790936ed4035c5ca1480212e0f.png" style="vertical-align: -4px" width="34">
+      be the number of positive integers
+      <img alt="$k&lt; n$" class="latex" height="13" src="//latex.artofproblemsolving.com/f/1/1/f116a921790b1fb2c3fa965d2cd9379c14241ed3.png" style="vertical-align: 0px" width="45"/>
+      which are relatively prime to
+      <img alt="$n$" class="latex" height="8" src="//latex.artofproblemsolving.com/1/7/4/174fadd07fd54c9afe288e96558c92e0c1da733a.png" width="10"/>
+      . For how many distinct values of
+      <img alt="$n$" class="latex" height="8" src="//latex.artofproblemsolving.com/1/7/4/174fadd07fd54c9afe288e96558c92e0c1da733a.png" width="10"/>
+      is
+      <img alt="$\phi(n)=12$" class="latex" height="18" src="//latex.artofproblemsolving.com/7/9/1/7914b57d649337f3380b2e1ad9054310b8eb160c.png" style="vertical-align: -4px" width="77"/>
+      ?
+     </img>
+    </p>
+    <p>
+     <img alt="$\text{(A) } 0 \quad \text{(B) } 1 \quad \text{(C) } 2 \quad \text{(D) } 3 \quad \text{(E) } 4 \quad \text{(F) } 5 \quad \text{(G) } 6 \quad \text{(H) } 7 \quad \text{(I) } 8 \quad \text{(J) } 9 \quad \text{(K) } 10 \quad \text{(L) } 11 \quad \text{(M) } 12\quad \text{(N) } 13\quad$" class="latex" height="17" src="//latex.artofproblemsolving.com/9/f/4/9f48e5f5ac83d1607c9b94b0fc6b3c45868850dc.png" style="vertical-align: -4px" width="799"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2003 AMC 10A Problems/Problem 25
+    <p>
+     Let
+     <img alt="$n$" class="latex" height="8" src="//latex.artofproblemsolving.com/1/7/4/174fadd07fd54c9afe288e96558c92e0c1da733a.png" width="10">
+      be a
+      <img alt="$5$" class="latex" height="12" src="//latex.artofproblemsolving.com/7/9/0/79069377f91364c2f87a64e5f9f562a091c8a6c1.png" width="8"/>
+      -digit number, and let
+      <img alt="$q$" class="latex" height="11" src="//latex.artofproblemsolving.com/0/6/1/0615acc3725de21025457e7d6f7694dab8e2f758.png" style="vertical-align: -3px" width="8"/>
+      and
+      <img alt="$r$" class="latex" height="8" src="//latex.artofproblemsolving.com/b/5/5/b55ca7a0aa88ab7d58f4fc035317fdac39b17861.png" width="8"/>
+      be the quotient and the remainder, respectively, when
+      <img alt="$n$" class="latex" height="8" src="//latex.artofproblemsolving.com/1/7/4/174fadd07fd54c9afe288e96558c92e0c1da733a.png" width="10"/>
+      is divided by
+      <img alt="$100$" class="latex" height="13" src="//latex.artofproblemsolving.com/e/5/9/e59e2c6e83eb78cca610a5fd4070ae01c8d4ae60.png" style="vertical-align: 0px" width="26"/>
+      . For how many values of
+      <img alt="$n$" class="latex" height="8" src="//latex.artofproblemsolving.com/1/7/4/174fadd07fd54c9afe288e96558c92e0c1da733a.png" width="10"/>
+      is
+      <img alt="$q+r$" class="latex" height="14" src="//latex.artofproblemsolving.com/3/1/a/31a6cd957da325a37d10bbf4c8078775c574306d.png" style="vertical-align: -3px" width="39"/>
+      divisible by
+      <img alt="$11$" class="latex" height="12" src="//latex.artofproblemsolving.com/c/6/8/c6878713578626763c38433b3f4c8c2205ad0c15.png" style="vertical-align: 0px" width="17"/>
+      ?
+     </img>
+    </p>
+    <p>
+     <img alt="$\mathrm{(A) \ } 8180\qquad \mathrm{(B) \ } 8181\qquad \mathrm{(C) \ } 8182\qquad \mathrm{(D) \ } 9000\qquad \mathrm{(E) \ } 9090$" class="latex" height="18" src="//latex.artofproblemsolving.com/d/6/a/d6ae018908e77ecc25b6ea19a260d82365a0fe5a.png" style="vertical-align: -4px" width="478"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2005 AIME I Problems/Problem 3
+    <p>
+     How many
+     <a href="/wiki/index.php/Positive_integer" title="Positive integer">
+      positive integers
+     </a>
+     have exactly three
+     <a href="/wiki/index.php/Proper_divisor" title="Proper divisor">
+      proper divisors
+     </a>
+     (positive integral
+     <a href="/wiki/index.php/Divisor" title="Divisor">
+      divisors
+     </a>
+     excluding itself), each of which is less than 50?
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2006 AMC 12A Problems/Problem 9
+    <p>
+     Oscar buys
+     <img alt="$13$" class="latex" height="13" src="//latex.artofproblemsolving.com/0/3/0/030e19e4e2f1c074127cb50581e8496470c5419f.png" style="vertical-align: 0px" width="17">
+      pencils and
+      <img alt="$3$" class="latex" height="12" src="//latex.artofproblemsolving.com/7/c/d/7cde695f2e4542fd01f860a89189f47a27143b66.png" width="8"/>
+      erasers for
+      <img alt="$1.00$" class="latex" height="13" src="//latex.artofproblemsolving.com/0/7/8/078860bc3c75731e529cf5127116af83716a0631.png" style="vertical-align: 0px" width="31"/>
+      . A pencil costs more than an eraser, and both items cost a
+      <a href="/wiki/index.php/Whole_number" title="Whole number">
+       whole number
+      </a>
+      of cents. What is the total cost, in cents, of one pencil and one eraser?
+     </img>
+    </p>
+    <p>
+     <img alt="$\mathrm{(A)}\ 10\qquad\mathrm{(B)}\ 12\qquad\mathrm{(C)}\ 15\qquad\mathrm{(D)}\ 18\qquad\mathrm{(E)}\ 20$" class="latex" height="18" src="//latex.artofproblemsolving.com/b/9/6/b969d790c2ba774132bc3639a2f19d69573baf8f.png" style="vertical-align: -4px" width="387"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2010 AIME I Problems/Problem 2
+    <p>
+     Find the
+     <a href="/wiki/index.php/Remainder" title="Remainder">
+      remainder
+     </a>
+     when
+     <img alt="$9 \times 99 \times 999 \times \cdots \times \underbrace{99\cdots9}_{\text{999 9's}}$" class="latex" height="35" src="//latex.artofproblemsolving.com/2/f/b/2fbb6a8280d5de66ddbf1dc8146f252a5c31849b.png" style="vertical-align: -22px" width="220">
+      is divided by
+      <img alt="$1000$" class="latex" height="13" src="//latex.artofproblemsolving.com/6/e/e/6ee927e1332358c96c62c277441c907c4f51057f.png" style="vertical-align: 0px" width="35"/>
+      .
+     </img>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2005 AIME II Problems/Problem 4
+    <p>
+     Find the number of
+     <a href="/wiki/index.php/Positive_integer" title="Positive integer">
+      positive integers
+     </a>
+     that are divisors of at least one of
+     <img alt="$10^{10},15^7,18^{11}.$" class="latex" height="18" src="//latex.artofproblemsolving.com/1/1/6/116f0b7c1f34a5fa42adbe97a21f68882e12c7b8.png" style="vertical-align: -3px" width="110">
+     </img>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2005 AMC 10A Problems/Problem 15
+    <p>
+     How many positive cubes divide
+     <img alt="$3! \cdot 5! \cdot 7!$" class="latex" height="13" src="//latex.artofproblemsolving.com/0/f/f/0ffc2c64d7db2d287cb6fe8a7eb1acb3a83018d3.png" width="67">
+      ?
+     </img>
+    </p>
+    <p>
+     <img alt="$\mathrm{(A) \ } 2\qquad \mathrm{(B) \ } 3\qquad \mathrm{(C) \ } 4\qquad \mathrm{(D) \ } 5\qquad \mathrm{(E) \ } 6$" class="latex" height="18" src="//latex.artofproblemsolving.com/6/a/5/6a5bf1be2622c3a74e2570c2e52f05e0a63075c6.png" style="vertical-align: -4px" width="342"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2017 AMC 10A Problems/Problem 16
+    <p>
+     There are
+     <img alt="$10$" class="latex" height="13" src="//latex.artofproblemsolving.com/f/c/6/fc606f7f1e530731ab4f1cc364c01dc64a4455ee.png" style="vertical-align: 0px" width="17">
+      horses, named Horse
+      <img alt="$1$" class="latex" height="12" src="//latex.artofproblemsolving.com/d/c/e/dce34f4dfb2406144304ad0d6106c5382ddd1446.png" style="vertical-align: 0px" width="8"/>
+      , Horse
+      <img alt="$2$" class="latex" height="12" src="//latex.artofproblemsolving.com/4/1/c/41c544263a265ff15498ee45f7392c5f86c6d151.png" width="8"/>
+      , . . . , Horse
+      <img alt="$10$" class="latex" height="13" src="//latex.artofproblemsolving.com/f/c/6/fc606f7f1e530731ab4f1cc364c01dc64a4455ee.png" style="vertical-align: 0px" width="17"/>
+      . They get their names from how many minutes it takes them to run one lap around a circular race track: Horse
+      <img alt="$k$" class="latex" height="12" src="//latex.artofproblemsolving.com/8/c/3/8c325612684d41304b9751c175df7bcc0f61f64f.png" width="9"/>
+      runs one lap in exactly
+      <img alt="$k$" class="latex" height="12" src="//latex.artofproblemsolving.com/8/c/3/8c325612684d41304b9751c175df7bcc0f61f64f.png" width="9"/>
+      minutes. At time
+      <img alt="$0$" class="latex" height="12" src="//latex.artofproblemsolving.com/b/c/1/bc1f9d9bf8a1b606a4188b5ce9a2af1809e27a89.png" width="8"/>
+      all the horses are together at the starting point on the track. The horses start running in the same direction, and they keep running around the circular track at their constant speeds. The least time
+      <img alt="$S &gt; 0$" class="latex" height="13" src="//latex.artofproblemsolving.com/f/3/8/f383a25cbaf4e6cdd01c91d221acbe0da42cf772.png" style="vertical-align: 0px" width="45"/>
+      , in minutes, at which all
+      <img alt="$10$" class="latex" height="13" src="//latex.artofproblemsolving.com/f/c/6/fc606f7f1e530731ab4f1cc364c01dc64a4455ee.png" style="vertical-align: 0px" width="17"/>
+      horses will again simultaneously be at the starting point is
+      <img alt="$S=2520$" class="latex" height="12" src="//latex.artofproblemsolving.com/7/f/9/7f97dde7b9cfbcb27a1710a8949304e86e6ccbc4.png" width="72"/>
+      . Let
+      <img alt="$T &gt; 0$" class="latex" height="13" src="//latex.artofproblemsolving.com/6/b/6/6b6b1d477b3065137db42689de1d3ca2bb9675e3.png" style="vertical-align: 0px" width="46"/>
+      be the least time, in minutes, such that at least
+      <img alt="$5$" class="latex" height="12" src="//latex.artofproblemsolving.com/7/9/0/79069377f91364c2f87a64e5f9f562a091c8a6c1.png" width="8"/>
+      of the horses are again at the starting point. What is the sum of the digits of
+      <img alt="$T?$" class="latex" height="12" src="//latex.artofproblemsolving.com/1/a/d/1ad9f4e72155a12628fa95edc7208591148ca8a1.png" width="21"/>
+     </img>
+    </p>
+    <p>
+     <img alt="$\textbf{(A) }2 \qquad \textbf{(B) }3 \qquad \textbf{(C) }4 \qquad \textbf{(D) }5 \qquad \textbf{(E) }6$" class="latex" height="17" src="//latex.artofproblemsolving.com/0/b/b/0bb1eff1d78d6e8966f558e08d54f3488ace6103.png" style="vertical-align: -4px" width="353"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2006 AMC 10B Problems/Problem 11
+    <p>
+     What is the tens digit in the sum
+     <img alt="$7!+8!+9!+...+2006!$" class="latex" height="14" src="//latex.artofproblemsolving.com/b/c/2/bc23705486fc49308e04b5b5505b0bb2463bcb41.png" style="vertical-align: -1px" width="186">
+     </img>
+    </p>
+    <p>
+     <img alt="$\mathrm{(A) \ } 1\qquad \mathrm{(B) \ } 3\qquad \mathrm{(C) \ } 4\qquad \mathrm{(D) \ } 6\qquad \mathrm{(E) \ } 9$" class="latex" height="18" src="//latex.artofproblemsolving.com/b/1/6/b16e2fd6d6b571c3f6a4ca9a342c30368422dc1c.png" style="vertical-align: -4px" width="342"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2006 AMC 10B Problems/Problem 22
+    <p>
+     Elmo makes
+     <img alt="$N$" class="latex" height="12" src="//latex.artofproblemsolving.com/f/c/9/fc97ef67268cd4e91bacdf12b8901d7036c9a056.png" width="16">
+      sandwiches for a fundraiser. For each sandwich he uses
+      <img alt="$B$" class="latex" height="12" src="//latex.artofproblemsolving.com/f/f/5/ff5fb3d775862e2123b007eb4373ff6cc1a34d4e.png" width="14"/>
+      globs of peanut butter at
+      <img alt="$4\cent$" class="latex" height="15" src="//latex.artofproblemsolving.com/f/4/8/f48fc6923835b31862020dfd12315b061ac78bae.png" style="vertical-align: -3px" width="17"/>
+      per glob and
+      <img alt="$J$" class="latex" height="12" src="//latex.artofproblemsolving.com/a/b/b/abb5588023cfa1ac14643e9778699f03eecc57a3.png" width="12"/>
+      blobs of jam at
+      <img alt="$5\cent$" class="latex" height="15" src="//latex.artofproblemsolving.com/9/f/8/9f893e3ab4cb9eb07c7cadd340db577658d3f8c1.png" style="vertical-align: -3px" width="17"/>
+      per blob. The cost of the peanut butter and jam to make all the sandwiches is
+      <img alt="$$ 2.53$" class="latex" height="14" src="//latex.artofproblemsolving.com/7/4/8/74898d3eca9a6fc1ed11e878b6a98849584448b3.png" style="vertical-align: -1px" width="40"/>
+      . Assume that
+      <img alt="$B$" class="latex" height="12" src="//latex.artofproblemsolving.com/f/f/5/ff5fb3d775862e2123b007eb4373ff6cc1a34d4e.png" width="14"/>
+      ,
+      <img alt="$J$" class="latex" height="12" src="//latex.artofproblemsolving.com/a/b/b/abb5588023cfa1ac14643e9778699f03eecc57a3.png" width="12"/>
+      , and
+      <img alt="$N$" class="latex" height="12" src="//latex.artofproblemsolving.com/f/c/9/fc97ef67268cd4e91bacdf12b8901d7036c9a056.png" width="16"/>
+      are positive integers with
+      <img alt="$N&gt;1$" class="latex" height="13" src="//latex.artofproblemsolving.com/0/c/9/0c9c0479fbd8aad814e20f8d875602b38a115c4d.png" style="vertical-align: 0px" width="49"/>
+      . What is the cost of the jam Elmo uses to make the sandwiches?
+     </img>
+    </p>
+    <p>
+     <img alt="$\mathrm{(A) \ } $ 1.05\qquad \mathrm{(B) \ } $ 1.25\qquad \mathrm{(C) \ } $ 1.45\qquad \mathrm{(D) \ } $ 1.65\qquad \mathrm{(E) \ } $ 1.85$" class="latex" height="18" src="//latex.artofproblemsolving.com/9/8/f/98fc7f6b65a9c0f7828fa1aacdd0357cb6daaa58.png" style="vertical-align: -4px" width="503"/>
+    </p>
+   </li>
+  </ol>
+ </body>
+</html>

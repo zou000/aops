@@ -1,0 +1,1253 @@
+<html>
+ <head>
+  <base href="https://artofproblemsolving.com"/>
+ </head>
+ <body>
+  <h3>
+   combinatorics_toc.html 1-30
+  </h3>
+  <ol>
+   <li>
+    <hr/>
+    2012 AMC 10B Problems/Problem 25
+    <p>
+     A bug travels from A to B along the segments in the hexagonal lattice pictured below. The segments marked with an arrow can be traveled only in the direction of the arrow, and the bug never travels the same segment more than once. How many different paths are there?
+    </p>
+    <p>
+     <img alt='[asy] size(10cm); draw((0.0,0.0)--(1.0,1.7320508075688772)--(3.0,1.7320508075688772)--(4.0,3.4641016151377544)--(6.0,3.4641016151377544)--(7.0,5.196152422706632)--(9.0,5.196152422706632)--(10.0,6.928203230275509)--(12.0,6.928203230275509)); draw((0.0,0.0)--(1.0,1.7320508075688772)--(3.0,1.7320508075688772)--(4.0,3.4641016151377544)--(6.0,3.4641016151377544)--(7.0,5.196152422706632)--(9.0,5.196152422706632)--(10.0,6.928203230275509)--(12.0,6.928203230275509)); draw((3.0,-1.7320508075688772)--(4.0,0.0)--(6.0,0.0)--(7.0,1.7320508075688772)--(9.0,1.7320508075688772)--(10.0,3.4641016151377544)--(12.0,3.464101615137755)--(13.0,5.196152422706632)--(15.0,5.196152422706632)); draw((6.0,-3.4641016151377544)--(7.0,-1.7320508075688772)--(9.0,-1.7320508075688772)--(10.0,0.0)--(12.0,0.0)--(13.0,1.7320508075688772)--(15.0,1.7320508075688776)--(16.0,3.464101615137755)--(18.0,3.4641016151377544)); draw((9.0,-5.196152422706632)--(10.0,-3.464101615137755)--(12.0,-3.464101615137755)--(13.0,-1.7320508075688776)--(15.0,-1.7320508075688776)--(16.0,0)--(18.0,0.0)--(19.0,1.7320508075688772)--(21.0,1.7320508075688767)); draw((12.0,-6.928203230275509)--(13.0,-5.196152422706632)--(15.0,-5.196152422706632)--(16.0,-3.464101615137755)--(18.0,-3.4641016151377544)--(19.0,-1.7320508075688772)--(21.0,-1.7320508075688767)--(22.0,0)); draw((0.0,-0.0)--(1.0,-1.7320508075688772)--(3.0,-1.7320508075688772)--(4.0,-3.4641016151377544)--(6.0,-3.4641016151377544)--(7.0,-5.196152422706632)--(9.0,-5.196152422706632)--(10.0,-6.928203230275509)--(12.0,-6.928203230275509)); draw((3.0,1.7320508075688772)--(4.0,-0.0)--(6.0,-0.0)--(7.0,-1.7320508075688772)--(9.0,-1.7320508075688772)--(10.0,-3.4641016151377544)--(12.0,-3.464101615137755)--(13.0,-5.196152422706632)--(15.0,-5.196152422706632)); draw((6.0,3.4641016151377544)--(7.0,1.7320508075688772)--(9.0,1.7320508075688772)--(10.0,-0.0)--(12.0,-0.0)--(13.0,-1.7320508075688772)--(15.0,-1.7320508075688776)--(16.0,-3.464101615137755)--(18.0,-3.4641016151377544)); draw((9.0,5.1961524)--(10.0,3.464101)--(12.0,3.46410)--(13.0,1.73205)--(15.0,1.732050)--(16.0,0)--(18.0,-0.0)--(19.0,-1.7320)--(21.0,-1.73205080)); draw((12.0,6.928203)--(13.0,5.1961524)--(15.0,5.1961524)--(16.0,3.464101615)--(18.0,3.4641016)--(19.0,1.7320508)--(21.0,1.732050)--(22.0,0)); dot((0,0)); dot((22,0)); label("$A$",(0,0),WNW); label("$B$",(22,0),E); filldraw((2.0,1.7320508075688772)--(1.6,1.2320508075688772)--(1.75,1.7320508075688772)--(1.6,2.232050807568877)--cycle,black); filldraw((5.0,3.4641016151377544)--(4.6,2.9641016151377544)--(4.75,3.4641016151377544)--(4.6,3.9641016151377544)--cycle,black); filldraw((8.0,5.196152422706632)--(7.6,4.696152422706632)--(7.75,5.196152422706632)--(7.6,5.696152422706632)--cycle,black); filldraw((11.0,6.928203230275509)--(10.6,6.428203230275509)--(10.75,6.928203230275509)--(10.6,7.428203230275509)--cycle,black); filldraw((4.6,0.0)--(5.0,-0.5)--(4.85,0.0)--(5.0,0.5)--cycle,white); filldraw((8.0,1.732050)--(7.6,1.2320)--(7.75,1.73205)--(7.6,2.2320)--cycle,black); filldraw((11.0,3.4641016)--(10.6,2.9641016)--(10.75,3.46410161)--(10.6,3.964101)--cycle,black); filldraw((14.0,5.196152422706632)--(13.6,4.696152422706632)--(13.75,5.196152422706632)--(13.6,5.696152422706632)--cycle,black); filldraw((8.0,-1.732050)--(7.6,-2.232050)--(7.75,-1.7320508)--(7.6,-1.2320)--cycle,black); filldraw((10.6,0.0)--(11,-0.5)--(10.85,0.0)--(11,0.5)--cycle,white); filldraw((14.0,1.7320508075688772)--(13.6,1.2320508075688772)--(13.75,1.7320508075688772)--(13.6,2.232050807568877)--cycle,black); filldraw((17.0,3.464101615137755)--(16.6,2.964101615137755)--(16.75,3.464101615137755)--(16.6,3.964101615137755)--cycle,black); filldraw((11.0,-3.464101615137755)--(10.6,-3.964101615137755)--(10.75,-3.464101615137755)--(10.6,-2.964101615137755)--cycle,black); filldraw((14.0,-1.7320508075688776)--(13.6,-2.2320508075688776)--(13.75,-1.7320508075688776)--(13.6,-1.2320508075688776)--cycle,black); filldraw((16.6,0)--(17,-0.5)--(16.85,0)--(17,0.5)--cycle,white); filldraw((20.0,1.7320508075688772)--(19.6,1.2320508075688772)--(19.75,1.7320508075688772)--(19.6,2.232050807568877)--cycle,black); filldraw((14.0,-5.196152422706632)--(13.6,-5.696152422706632)--(13.75,-5.196152422706632)--(13.6,-4.696152422706632)--cycle,black); filldraw((17.0,-3.464101615137755)--(16.6,-3.964101615137755)--(16.75,-3.464101615137755)--(16.6,-2.964101615137755)--cycle,black); filldraw((20.0,-1.7320508075688772)--(19.6,-2.232050807568877)--(19.75,-1.7320508075688772)--(19.6,-1.2320508075688772)--cycle,black); filldraw((2.0,-1.7320508075688772)--(1.6,-1.2320508075688772)--(1.75,-1.7320508075688772)--(1.6,-2.232050807568877)--cycle,black); filldraw((5.0,-3.4641016)--(4.6,-2.964101)--(4.75,-3.4641)--(4.6,-3.9641016)--cycle,black); filldraw((8.0,-5.1961524)--(7.6,-4.6961524)--(7.75,-5.19615242)--(7.6,-5.696152422)--cycle,black); filldraw((11.0,-6.9282032)--(10.6,-6.4282032)--(10.75,-6.928203)--(10.6,-7.428203)--cycle,black);[/asy]' class="latexcenter" height="288" src="//latex.artofproblemsolving.com/3/c/2/3c208832b26b520d3585031acd75a37563652720.png" width="475">
+     </img>
+    </p>
+    <p>
+     <img alt="$\textbf{(A)}\ 2112\qquad\textbf{(B)}\ 2304\qquad\textbf{(C)}\ 2368\qquad\textbf{(D)}\ 2384\qquad\textbf{(E)}\ 2400$" class="latex" height="17" src="//latex.artofproblemsolving.com/f/2/3/f23d8e86d933005c89ee6461ea9314285cf9c0c2.png" style="vertical-align: -4px" width="484"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2007 iTest Problems/Problem 16
+    <p>
+     How many lattice points lie within or on the border of the circle in the
+     <img alt="$xy$" class="latex" height="11" src="//latex.artofproblemsolving.com/3/f/7/3f79c3676b62fb47243e0d357c87115b6f3395e4.png" style="vertical-align: -3px" width="19">
+      -plane defined by the equation
+      <img alt="\[x^2+y^2=100\]" class="latexcenter" height="18" src="//latex.artofproblemsolving.com/3/8/d/38dff12087f647d5f1f06bd691ad336792f856b1.png" width="107"/>
+     </img>
+    </p>
+    <p>
+     <img alt="$\text{(A) }1\qquad \text{(B) }2\qquad \text{(C) }4\qquad \text{(D) }5\qquad \text{(E) }41\qquad \text{(F) }42\qquad \text{(G) }69\qquad \text{(H) }76\qquad \text{(I) }130\qquad \\ \text{(J) }133\qquad \text{(K) }233\qquad \text{(L) }311\qquad \text{(M) }317\qquad \text{(N) }420\qquad \text{(O) }520\qquad \text{(P) }2007$" class="latex" height="37" src="//latex.artofproblemsolving.com/8/e/3/8e3d6cd7c347becf206cec3fb9a10494a860c511.png" style="vertical-align: -4px" width="670"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2006 AMC 10A Problems/Problem 13
+    <p>
+     A player pays
+     <img alt="$\textdollar 5$" class="latex" height="14" src="//latex.artofproblemsolving.com/8/6/3/863443646262ff9e58d2003b229724b3203af171.png" style="vertical-align: -1px" width="17">
+      to play a game. A die is rolled. If the number on the die is odd, the game is lost. If the number on the die is even, the die is rolled again. In this case the player wins if the second number matches the first and loses otherwise. How much should the player win if the game is fair? (In a fair game the probability of winning times the amount won is what the player should pay.)
+     </img>
+    </p>
+    <p>
+     <img alt="$\mathrm{(A) \ } \textdollar12\qquad\mathrm{(B) \ } \textdollar30\qquad\mathrm{(C) \ } \textdollar50\qquad\mathrm{(D) \ } \textdollar60\qquad\mathrm{(E) \ } \textdollar 100\qquad$" class="latex" height="18" src="//latex.artofproblemsolving.com/f/4/d/f4df748f73db8c2a862f8ca3bf44fadaa673136c.png" style="vertical-align: -4px" width="441"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2008 iTest Problems/Problem 50
+    <p>
+     As the Kubiks head out of town for vacation, Jerry takes the first driving shift while Hannah and most of the kids settle down to read books they brought along. Tony does not feel like reading, so Alexis gives him one of her math notebooks and Tony gets to work solving some of the problems, and struggling over others. After a while, Tony comes to
+     <a href="/wiki/index.php/2002_AMC_12B_Problems/Problem_14" title="2002 AMC 12B Problems/Problem 14">
+      a problem he likes from an old AMC 10 exam
+     </a>
+     :
+    </p>
+    <p>
+     <i>
+      Four distinct circles are drawn in a plane. What is the maximum number of points where at least two of the circles intersect?
+     </i>
+    </p>
+    <p>
+     Tony realizes that he can draw the four circles such that each pair of circles intersects in two points. After careful doodling, Tony finds the correct answer, and is proud that he can solve a problem from late on an AMC 10 exam.
+    </p>
+    <p>
+     "Mom, why didn't we all get Tony's brain?" Wendy inquires before turning he head back into her favorite Harry Potter volume (the fifth year).
+    </p>
+    <p>
+     Joshua leans over to Tony's seat to see his brother's work. Joshua knows that Tony has not yet discovered all the underlying principles behind the problem, so Joshua challenges, "What if there are a dozen circles?"
+    </p>
+    <p>
+     Tony gets to work on Joshua's problem of finding the maximum number of points of intersections where at least two of the twelve circles in a plane intersect. What is the answer to this problem?
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2009 AMC 10A Problems/Problem 24
+    <p>
+     Three distinct vertices of a cube are chosen at random. What is the probability that the plane determined by these three vertices contains points inside the cube?
+    </p>
+    <p>
+     <img alt="$\mathrm{(A)}\ \frac{1}{4} \qquad \mathrm{(B)}\ \frac{3}{8} \qquad \mathrm{(C)}\ \frac{4}{7} \qquad \mathrm{(D)}\ \frac{5}{7} \qquad \mathrm{(E)}\ \frac{3}{4}$" class="latex" height="38" src="//latex.artofproblemsolving.com/d/9/6/d96cf89630705289bfceb5d7b36aae407ed2ae41.png" style="vertical-align: -13px" width="361">
+     </img>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2007 Indonesia MO Problems/Problem 4
+    <p>
+     A 10-digit arrangement
+     <img alt="$0,1,2,3,4,5,6,7,8,9$" class="latex" height="16" src="//latex.artofproblemsolving.com/4/2/b/42bf7f8776528ab1d4ed542ac58db16262f99dc3.png" style="vertical-align: -3px" width="163">
+      is called beautiful if (i) when read left to right,
+      <img alt="$0,1,2,3,4$" class="latex" height="16" src="//latex.artofproblemsolving.com/d/1/f/d1fc9cd9d1e7ef72e3142cab0508cd24fde50ebf.png" style="vertical-align: -3px" width="77"/>
+      form an increasing sequence, and
+      <img alt="$5,6,7,8,9$" class="latex" height="16" src="//latex.artofproblemsolving.com/5/d/0/5d0e739e25ec563ed2d04529e1334b0d7071ecea.png" style="vertical-align: -3px" width="77"/>
+      form a decreasing sequence, and (ii)
+      <img alt="$0$" class="latex" height="12" src="//latex.artofproblemsolving.com/b/c/1/bc1f9d9bf8a1b606a4188b5ce9a2af1809e27a89.png" width="8"/>
+      is not the leftmost digit. For example,
+      <img alt="$9807123654$" class="latex" height="13" src="//latex.artofproblemsolving.com/b/5/6/b56a90676e8098d5a982ccc50f681c11551ac518.png" style="vertical-align: 0px" width="90"/>
+      is a beautiful arrangement. Determine the number of beautiful arrangements.
+     </img>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2013 AMC 10A Problems/Problem 24
+    <p>
+     Central High School is competing against Northern High School in a backgammon match. Each school has three players, and the contest rules require that each player play two games against each of the other school's players. The match takes place in six rounds, with three games played simultaneously in each round. In how many different ways can the match be scheduled?
+    </p>
+    <p>
+     <img alt="$\textbf{(A)}\ 540\qquad\textbf{(B)}\ 600\qquad\textbf{(C)}\ 720\qquad\textbf{(D)}\ 810\qquad\textbf{(E)}\ 900$" class="latex" height="17" src="//latex.artofproblemsolving.com/4/3/9/439e4806a26ed0e70fcfdf879038e6023344c809.png" style="vertical-align: -4px" width="439">
+     </img>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2004 AMC 10A Problems/Problem 16
+    <p>
+     The
+     <img alt="$5\times 5$" class="latex" height="12" src="//latex.artofproblemsolving.com/e/f/7/ef7fe7592026585cc36e4d7c6036f19fd8afdc29.png" width="40">
+      grid shown contains a collection of squares with sizes from
+      <img alt="$1\times 1$" class="latex" height="12" src="//latex.artofproblemsolving.com/8/a/8/8a8df7312744a199daa5c8008af5b9b4798bfd64.png" style="vertical-align: 0px" width="39"/>
+      to
+      <img alt="$5\times 5$" class="latex" height="12" src="//latex.artofproblemsolving.com/e/f/7/ef7fe7592026585cc36e4d7c6036f19fd8afdc29.png" width="40"/>
+      . How many of these squares contain the black center square?
+     </img>
+    </p>
+    <p>
+     <a class="image" href="/wiki/index.php/File:2004_AMC_10A_problem_16.png">
+      <img alt="2004 AMC 10A problem 16.png" height="134" src="https://wiki-images.artofproblemsolving.com//7/7b/2004_AMC_10A_problem_16.png" width="144"/>
+     </a>
+    </p>
+    <p>
+     <img alt="$\mathrm{(A) \ } 12 \qquad \mathrm{(B) \ } 15 \qquad \mathrm{(C) \ } 17 \qquad \mathrm{(D) \ }  19\qquad \mathrm{(E) \ } 20$" class="latex" height="18" src="//latex.artofproblemsolving.com/1/d/4/1d4eaf220bb5908f25aff55f0a053c5f37d09fc8.png" style="vertical-align: -4px" width="387"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    1990 AHSME Problems/Problem 16
+    <p>
+     At one of George Washington's parties, each man shook hands with everyone except his spouse, and no handshakes took place between women. If
+     <img alt="$13$" class="latex" height="13" src="//latex.artofproblemsolving.com/0/3/0/030e19e4e2f1c074127cb50581e8496470c5419f.png" style="vertical-align: 0px" width="17">
+      married couples attended, how many handshakes were there among these
+      <img alt="$26$" class="latex" height="12" src="//latex.artofproblemsolving.com/b/d/a/bda00d9a38a0c6bd9aac2512c6d065581882d43c.png" width="17"/>
+      people?
+     </img>
+    </p>
+    <p>
+     <img alt="$\text{(A) } 78\quad \text{(B) } 185\quad \text{(C) } 234\quad \text{(D) } 312\quad \text{(E) } 325$" class="latex" height="17" src="//latex.artofproblemsolving.com/c/3/0/c30f14bf0eb777af7b18b1bdd22d60ad494e7020.png" style="vertical-align: -4px" width="345"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2007 iTest Problems/Problem 4
+    <p>
+     Star flips a quarter four times. Find the probability that the quarter lands heads exactly twice.
+    </p>
+    <p>
+     <img alt="$\mathrm{(A)}\,\frac{1}{8}\quad\mathrm{(B)}\,\frac{3}{16}\quad\mathrm{(C)}\,\frac{3}{8}\quad\mathrm{(D)}\,\frac{1}{2}$" class="latex" height="38" src="//latex.artofproblemsolving.com/4/8/3/483baa52dc67b1f00c5aab21bcd60019b4671903.png" style="vertical-align: -13px" width="232">
+     </img>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2006 AMC 10B Problems/Problem 21
+    <p>
+     For a particular peculiar pair of dice, the probabilities of rolling
+     <img alt="$1$" class="latex" height="12" src="//latex.artofproblemsolving.com/d/c/e/dce34f4dfb2406144304ad0d6106c5382ddd1446.png" style="vertical-align: 0px" width="8">
+      ,
+      <img alt="$2$" class="latex" height="12" src="//latex.artofproblemsolving.com/4/1/c/41c544263a265ff15498ee45f7392c5f86c6d151.png" width="8"/>
+      ,
+      <img alt="$3$" class="latex" height="12" src="//latex.artofproblemsolving.com/7/c/d/7cde695f2e4542fd01f860a89189f47a27143b66.png" width="8"/>
+      ,
+      <img alt="$4$" class="latex" height="12" src="//latex.artofproblemsolving.com/c/7/c/c7cab1a05e1e0c1d51a6a219d96577a16b7abf9d.png" style="vertical-align: 0px" width="9"/>
+      ,
+      <img alt="$5$" class="latex" height="12" src="//latex.artofproblemsolving.com/7/9/0/79069377f91364c2f87a64e5f9f562a091c8a6c1.png" width="8"/>
+      , and
+      <img alt="$6$" class="latex" height="12" src="//latex.artofproblemsolving.com/6/0/1/601a7806cbfad68196c43a4665871f8c3186802e.png" width="8"/>
+      , on each die are in the ratio
+      <img alt="$1:2:3:4:5:6$" class="latex" height="13" src="//latex.artofproblemsolving.com/a/f/c/afcc813f6e07ebd73007cc3a28ae8b648b58daa2.png" style="vertical-align: 0px" width="129"/>
+      . What is the probability of rolling a total of
+      <img alt="$7$" class="latex" height="12" src="//latex.artofproblemsolving.com/e/0/a/e0a0db32027a732ac57d37ef2ae9bb150f65b108.png" width="9"/>
+      on the two dice?
+     </img>
+    </p>
+    <p>
+     <img alt="$\mathrm{(A) \ } \frac{4}{63}\qquad \mathrm{(B) \ } \frac{1}{8}\qquad \mathrm{(C) \ } \frac{8}{63}\qquad \mathrm{(D) \ } \frac{1}{6}\qquad \mathrm{(E) \ } \frac{2}{7}$" class="latex" height="37" src="//latex.artofproblemsolving.com/c/8/b/c8bbffc95ea8eab755e030473554f9aea7f5e474.png" style="vertical-align: -12px" width="379"/>
+    </p>
+    <p>
+     <br/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2012 AMC 12B Problems/Problem 18
+    <p>
+     Let
+     <img alt="$(a_1,a_2, \dots ,a_{10})$" class="latex" height="18" src="//latex.artofproblemsolving.com/5/8/6/5867391e23304ebf3d77595bb45f7a2ae88040e6.png" style="vertical-align: -4px" width="119">
+      be a list of the first 10 positive integers such that for each
+      <img alt="$2 \le i \le 10$" class="latex" height="15" src="//latex.artofproblemsolving.com/8/0/2/802e0235d81ec9ddef32acce704e5d067c22a14b.png" style="vertical-align: -2px" width="81"/>
+      either
+      <img alt="$a_i+1$" class="latex" height="14" src="//latex.artofproblemsolving.com/5/2/c/52cfd76a34ff70b7a5183ee51ba462514f30989e.png" style="vertical-align: -2px" width="45"/>
+      or
+      <img alt="$a_i-1$" class="latex" height="14" src="//latex.artofproblemsolving.com/3/0/6/3064797d8053419827130da49370cc0cf431d058.png" style="vertical-align: -2px" width="45"/>
+      or both appear somewhere before
+      <img alt="$a_i$" class="latex" height="10" src="//latex.artofproblemsolving.com/4/1/2/412787c048e28774dc63fc27db42dc52ca858de7.png" style="vertical-align: -2px" width="14"/>
+      in the list. How many such lists are there?
+     </img>
+    </p>
+    <p>
+     <img alt="$\textbf{(A)}\ 120\qquad\textbf{(B)}\ 512\qquad\textbf{(C)}\ 1024\qquad\textbf{(D)}\ 181,440\qquad\textbf{(E)}\ 362,880$" class="latex" height="17" src="//latex.artofproblemsolving.com/5/1/2/5128cea39bf1c34091a6756bcf3e8a0c4f49730d.png" style="vertical-align: -4px" width="519"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    1950 AHSME Problems/Problem 45
+    <p>
+     The number of diagonals that can be drawn in a polygon of 100 sides is:
+    </p>
+    <p>
+     <img alt="$\textbf{(A)}\ 4850 \qquad \textbf{(B)}\ 4950\qquad \textbf{(C)}\ 9900 \qquad \textbf{(D)}\ 98 \qquad \textbf{(E)}\ 8800$" class="latex" height="17" src="//latex.artofproblemsolving.com/b/b/3/bb39bb6be21ddf72d09b96637b30038e5cd6b806.png" style="vertical-align: -4px" width="466">
+     </img>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2009 AMC 12B Problems/Problem 20
+    <p>
+     A convex polyhedron
+     <img alt="$Q$" class="latex" height="16" src="//latex.artofproblemsolving.com/9/8/6/9866e3a998d628ba0941eb4fea0666ac391d149a.png" style="vertical-align: -3px" width="13">
+      has vertices
+      <img alt="$V_1,V_2,\ldots,V_n$" class="latex" height="16" src="//latex.artofproblemsolving.com/4/e/3/4e30c2d7dac2dcc50dca9fff6e71d80c372edb0a.png" style="vertical-align: -3px" width="103"/>
+      , and
+      <img alt="$100$" class="latex" height="13" src="//latex.artofproblemsolving.com/e/5/9/e59e2c6e83eb78cca610a5fd4070ae01c8d4ae60.png" style="vertical-align: 0px" width="26"/>
+      edges. The polyhedron is cut by planes
+      <img alt="$P_1,P_2,\ldots,P_n$" class="latex" height="16" src="//latex.artofproblemsolving.com/0/b/9/0b9824caec77ced15e97fb784e77ee597b609eed.png" style="vertical-align: -3px" width="106"/>
+      in such a way that plane
+      <img alt="$P_k$" class="latex" height="15" src="//latex.artofproblemsolving.com/7/6/e/76ebaba4ae3d5c911d6e31ad855d502ad88d48a6.png" style="vertical-align: -2px" width="18"/>
+      cuts only those edges that meet at vertex
+      <img alt="$V_k$" class="latex" height="15" src="//latex.artofproblemsolving.com/4/0/b/40b514f3d50ab12888fa4886e266bb6a1e8a7e9f.png" style="vertical-align: -2px" width="17"/>
+      . In addition, no two planes intersect inside or on
+      <img alt="$Q$" class="latex" height="16" src="//latex.artofproblemsolving.com/9/8/6/9866e3a998d628ba0941eb4fea0666ac391d149a.png" style="vertical-align: -3px" width="13"/>
+      . The cuts produce
+      <img alt="$n$" class="latex" height="8" src="//latex.artofproblemsolving.com/1/7/4/174fadd07fd54c9afe288e96558c92e0c1da733a.png" width="10"/>
+      pyramids and a new polyhedron
+      <img alt="$R$" class="latex" height="12" src="//latex.artofproblemsolving.com/e/f/f/eff43e84f8a3bcf7b6965f0a3248bc4d3a9d0cd4.png" width="14"/>
+      . How many edges does
+      <img alt="$R$" class="latex" height="12" src="//latex.artofproblemsolving.com/e/f/f/eff43e84f8a3bcf7b6965f0a3248bc4d3a9d0cd4.png" width="14"/>
+      have?
+     </img>
+    </p>
+    <p>
+     <img alt="$\mathrm{(A)}\ 200\qquad \mathrm{(B)}\ 2n\qquad \mathrm{(C)}\ 300\qquad \mathrm{(D)}\ 400\qquad \mathrm{(E)}\ 4n$" class="latex" height="18" src="//latex.artofproblemsolving.com/4/d/0/4d02f74bda7f885638bf6b39eb7e59eedb5cd4dc.png" style="vertical-align: -4px" width="418"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2010 AMC 12B Problems/Problem 11
+    <p>
+     A palindrome between
+     <img alt="$1000$" class="latex" height="13" src="//latex.artofproblemsolving.com/6/e/e/6ee927e1332358c96c62c277441c907c4f51057f.png" style="vertical-align: 0px" width="35">
+      and
+      <img alt="$10,000$" class="latex" height="16" src="//latex.artofproblemsolving.com/5/0/b/50b19142d92b7b4f1a115c4ec91766582e2b8faf.png" style="vertical-align: -3px" width="53"/>
+      is chosen at random. What is the probability that it is divisible by
+      <img alt="$7$" class="latex" height="12" src="//latex.artofproblemsolving.com/e/0/a/e0a0db32027a732ac57d37ef2ae9bb150f65b108.png" width="9"/>
+      ?
+     </img>
+    </p>
+    <p>
+     <img alt="$\textbf{(A)}\ \dfrac{1}{10} \qquad \textbf{(B)}\ \dfrac{1}{9} \qquad \textbf{(C)}\ \dfrac{1}{7} \qquad \textbf{(D)}\ \dfrac{1}{6} \qquad \textbf{(E)}\ \dfrac{1}{5}$" class="latex" height="37" src="//latex.artofproblemsolving.com/2/e/5/2e57575255ac069fd864e439317e89918e9300bc.png" style="vertical-align: -13px" width="376"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2003 AMC 12B Problems/Problem 19
+    <p>
+     Let
+     <img alt="$S$" class="latex" height="12" src="//latex.artofproblemsolving.com/a/d/2/ad28c83c99a8fd0dd2e2e594c9d02ee532765a0a.png" width="12">
+      be the
+      <a href="/wiki/index.php/Set" title="Set">
+       set
+      </a>
+      of
+      <a href="/wiki/index.php/Permutation" title="Permutation">
+       permutations
+      </a>
+      of the
+      <a href="/wiki/index.php/Sequence" title="Sequence">
+       sequence
+      </a>
+      <img alt="$1,2,3,4,5$" class="latex" height="16" src="//latex.artofproblemsolving.com/e/b/8/eb8480bbc71e3fd12e3f8b749c49c06897ee7bb0.png" style="vertical-align: -3px" width="77"/>
+      for which the first term is not
+      <img alt="$1$" class="latex" height="12" src="//latex.artofproblemsolving.com/d/c/e/dce34f4dfb2406144304ad0d6106c5382ddd1446.png" style="vertical-align: 0px" width="8"/>
+      . A permutation is chosen randomly from
+      <img alt="$S$" class="latex" height="12" src="//latex.artofproblemsolving.com/a/d/2/ad28c83c99a8fd0dd2e2e594c9d02ee532765a0a.png" width="12"/>
+      . The
+      <a href="/wiki/index.php/Probability" title="Probability">
+       probability
+      </a>
+      that the second term is
+      <img alt="$2$" class="latex" height="12" src="//latex.artofproblemsolving.com/4/1/c/41c544263a265ff15498ee45f7392c5f86c6d151.png" width="8"/>
+      , in lowest terms, is
+      <img alt="$a/b$" class="latex" height="18" src="//latex.artofproblemsolving.com/e/0/c/e0c22354f6f8870c3a024305aa3afed00b26bcf5.png" style="vertical-align: -4px" width="26"/>
+      . What is
+      <img alt="$a+b$" class="latex" height="14" src="//latex.artofproblemsolving.com/a/d/d/add2609af1bb7632cc22b68fd49fdd94de06b327.png" style="vertical-align: -1px" width="40"/>
+      ?
+     </img>
+    </p>
+    <p>
+     <img alt="$\mathrm{(A)}\ 5 \qquad\mathrm{(B)}\ 6 \qquad\mathrm{(C)}\ 11 \qquad\mathrm{(D)}\ 16 \qquad\mathrm{(E)}\ 19$" class="latex" height="18" src="//latex.artofproblemsolving.com/8/2/5/82518727efcdf5ca8126ab325c9f00ef4d5b5963.png" style="vertical-align: -4px" width="369"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2017 AMC 10A Problems/Problem 19
+    <p>
+     Alice refuses to sit next to either Bob or Carla. Derek refuses to sit next to Eric. How many ways are there for the five of them to sit in a row of
+     <img alt="$5$" class="latex" height="12" src="//latex.artofproblemsolving.com/7/9/0/79069377f91364c2f87a64e5f9f562a091c8a6c1.png" width="8">
+      chairs under these conditions?
+     </img>
+    </p>
+    <p>
+     <img alt="$\textbf{(A)}\ 12\qquad\textbf{(B)}\ 16\qquad\textbf{(C)}\ 28\qquad\textbf{(D)}\ 32\qquad\textbf{(E)}\ 40$" class="latex" height="17" src="//latex.artofproblemsolving.com/b/d/0/bd00a67c288e8a7ea6047e53b9c2021213c8d642.png" style="vertical-align: -4px" width="394"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    1990 AJHSME Problems/Problem 19
+    <p>
+     There are
+     <img alt="$120$" class="latex" height="13" src="//latex.artofproblemsolving.com/a/a/a/aaa4de95cc6371d125d5cf773cdd9f9913dd1d8e.png" style="vertical-align: 0px" width="26">
+      seats in a row.  What is the fewest number of seats that must be occupied so the next person to be seated must sit next to someone?
+     </img>
+    </p>
+    <p>
+     <img alt="$\text{(A)}\ 30 \qquad \text{(B)}\ 40 \qquad \text{(C)}\ 41 \qquad \text{(D)}\ 60 \qquad \text{(E)}\ 119$" class="latex" height="17" src="//latex.artofproblemsolving.com/d/2/6/d26c0609290cffc9a261d2b16a68e1023906e849.png" style="vertical-align: -4px" width="384"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2014 AMC 10A Problems/Problem 17
+    <p>
+     Three fair six-sided dice are rolled. What is the probability that the values shown on two of the dice sum to the value shown on the remaining die?
+    </p>
+    <p>
+     <img alt="$\textbf{(A)}\ \dfrac16\qquad\textbf{(B)}\ \dfrac{13}{72}\qquad\textbf{(C)}\ \dfrac7{36}\qquad\textbf{(D)}\ \dfrac5{24}\qquad\textbf{(E)}\ \dfrac29$" class="latex" height="38" src="//latex.artofproblemsolving.com/5/0/7/507886b0828e0f3dceb1c4fb82c359900a2674c8.png" style="vertical-align: -13px" width="395">
+     </img>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2013 AMC 12A Problems/Problem 15
+    <p>
+     Rabbits Peter and Pauline have three offspring—Flopsie, Mopsie, and Cotton-tail. These five rabbits are to be distributed to four different pet stores so that no store gets both a parent and a child. It is not required that every store gets a rabbit. In how many different ways can this be done?
+    </p>
+    <p>
+     <img alt="$\textbf{(A)} \ 96 \qquad  \textbf{(B)} \ 108 \qquad  \textbf{(C)} \ 156 \qquad  \textbf{(D)} \ 204 \qquad  \textbf{(E)} \ 372$" class="latex" height="17" src="//latex.artofproblemsolving.com/7/8/f/78fccdf6b49d5b9b57000807d6980b5893328479.png" style="vertical-align: -4px" width="430">
+     </img>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    1963 AHSME Problems/Problem 27
+    <p>
+     Six straight lines are drawn in a plane with no two parallel and no three concurrent. The number of regions into which they divide the plane is:
+    </p>
+    <p>
+     <img alt="$\textbf{(A)}\ 16 \qquad \textbf{(B)}\ 20\qquad \textbf{(C)}\ 22 \qquad \textbf{(D)}\ 24 \qquad \textbf{(E)}\ 26$" class="latex" height="17" src="//latex.artofproblemsolving.com/8/3/a/83ade73490c1eb090a2e42b9ce595777b9abc488.png" style="vertical-align: -4px" width="394">
+     </img>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    1991 AJHSME Problems/Problem 9
+    <p>
+     How many whole numbers from
+     <img alt="$1$" class="latex" height="12" src="//latex.artofproblemsolving.com/d/c/e/dce34f4dfb2406144304ad0d6106c5382ddd1446.png" style="vertical-align: 0px" width="8">
+      through
+      <img alt="$46$" class="latex" height="13" src="//latex.artofproblemsolving.com/5/a/b/5abef9fdb0235b2ede2639538b5bd76711e058fa.png" style="vertical-align: 0px" width="17"/>
+      are divisible by either
+      <img alt="$3$" class="latex" height="12" src="//latex.artofproblemsolving.com/7/c/d/7cde695f2e4542fd01f860a89189f47a27143b66.png" width="8"/>
+      or
+      <img alt="$5$" class="latex" height="12" src="//latex.artofproblemsolving.com/7/9/0/79069377f91364c2f87a64e5f9f562a091c8a6c1.png" width="8"/>
+      or both?
+     </img>
+    </p>
+    <p>
+     <img alt="$\text{(A)}\ 18 \qquad \text{(B)}\ 21 \qquad \text{(C)}\ 24 \qquad \text{(D)}\ 25 \qquad \text{(E)}\ 27$" class="latex" height="17" src="//latex.artofproblemsolving.com/8/8/7/8875f1e76ecf91d28ba84b3a3443627d8da18fb6.png" style="vertical-align: -4px" width="376"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2008 AMC 12B Problems/Problem 22
+    <p>
+     A parking lot has 16 spaces in a row. Twelve cars arrive, each of which requires one parking space, and their drivers chose spaces at random from among the available spaces. Auntie Em then arrives in her SUV, which requires 2 adjacent spaces. What is the probability that she is able to park?
+    </p>
+    <p>
+     <img alt="$\textbf{(A)} \; \frac {11}{20} \qquad \textbf{(B)} \; \frac {4}{7} \qquad \textbf{(C)} \; \frac {81}{140} \qquad \textbf{(D)} \; \frac {3}{5} \qquad \textbf{(E)} \; \frac {17}{28}$" class="latex" height="38" src="//latex.artofproblemsolving.com/5/1/c/51c107b61dbe5ecaa418747d80582a6cfeb6454e.png" style="vertical-align: -13px" width="401">
+     </img>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2010 AMC 12A Problems/Problem 19
+    <p>
+     Each of
+     <img alt="$2010$" class="latex" height="13" src="//latex.artofproblemsolving.com/0/5/4/054090e60a5dcb8bc33213620b3af9278f9a3e12.png" style="vertical-align: 0px" width="35">
+      boxes in a line contains a single red marble, and for
+      <img alt="$1 \le k \le 2010$" class="latex" height="15" src="//latex.artofproblemsolving.com/a/a/4/aa4914539356f9cd067409621814f4b7cbfbf4e8.png" style="vertical-align: -2px" width="103"/>
+      , the box in the
+      <img alt="$k\text{th}$" class="latex" height="12" src="//latex.artofproblemsolving.com/5/3/0/5300af7195084507169b12ba4d5fec382d6513b1.png" width="25"/>
+      position also contains
+      <img alt="$k$" class="latex" height="12" src="//latex.artofproblemsolving.com/8/c/3/8c325612684d41304b9751c175df7bcc0f61f64f.png" width="9"/>
+      white marbles. Isabella begins at the first box and successively draws a single marble at random from each box, in order. She stops when she first draws a red marble. Let
+      <img alt="$P(n)$" class="latex" height="18" src="//latex.artofproblemsolving.com/7/d/f/7dfd17dc4d3100462df726e8eb7f9262783429eb.png" style="vertical-align: -4px" width="37"/>
+      be the probability that Isabella stops after drawing exactly
+      <img alt="$n$" class="latex" height="8" src="//latex.artofproblemsolving.com/1/7/4/174fadd07fd54c9afe288e96558c92e0c1da733a.png" width="10"/>
+      marbles. What is the smallest value of
+      <img alt="$n$" class="latex" height="8" src="//latex.artofproblemsolving.com/1/7/4/174fadd07fd54c9afe288e96558c92e0c1da733a.png" width="10"/>
+      for which
+      <img alt="$P(n) &lt; \frac{1}{2010}$" class="latex" height="37" src="//latex.artofproblemsolving.com/2/7/8/278248c84b5bd1178f0dcffb2ea38e257eb41a29.png" style="vertical-align: -13px" width="102"/>
+      ?
+     </img>
+    </p>
+    <p>
+     <img alt="$\textbf{(A)}\ 45 \qquad \textbf{(B)}\ 63 \qquad \textbf{(C)}\ 64 \qquad \textbf{(D)}\ 201 \qquad \textbf{(E)}\ 1005$" class="latex" height="17" src="//latex.artofproblemsolving.com/f/b/e/fbe2921093d7ef880d0085c29f148f3b434cde92.png" style="vertical-align: -4px" width="421"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2006 AMC 12A Problems/Problem 20
+    <p>
+     A bug starts at one vertex of a cube and moves along the edges of the cube according to the following rule. At each vertex the bug will choose to travel along one of the three edges emanating from that vertex. Each edge has equal probability of being chosen, and all choices are independent. What is the
+     <a href="/wiki/index.php/Probability" title="Probability">
+      probability
+     </a>
+     that after seven moves the bug will have visited every vertex exactly once?
+    </p>
+    <p>
+     <img alt="$\mathrm{(A) \ } \frac{1}{2187}\qquad \mathrm{(B) \ } \frac{1}{729}\qquad \mathrm{(C) \ } \frac{2}{243}\qquad \mathrm{(D) \ } \frac{1}{81} \qquad \mathrm{(E) \ }  \frac{5}{243}$" class="latex" height="38" src="//latex.artofproblemsolving.com/b/6/e/b6eea5b4d72762c6ecc095f155a6b3820dc3c6a5.png" style="vertical-align: -13px" width="451">
+     </img>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2008 iTest Problems/Problem 95
+    <p>
+     Bored on their trip home, Joshua and Alexis decide to keep a tally of license plates they see in the other lanes: Joshua watches cars going the other way, and Alexis watches cars in the next lane.
+    </p>
+    <p>
+     After a few minutes, Wendy counts up the tallies and declares, "Joshua has counted
+     <img alt="$2008$" class="latex" height="12" src="//latex.artofproblemsolving.com/a/b/c/abc1744a459ad135efd3fd45fca7285cae133717.png" width="35">
+      license plates, and there are
+      <img alt="$17$" class="latex" height="12" src="//latex.artofproblemsolving.com/b/7/6/b7616a230c77f0d9a577e5bca01aa06f1c35c457.png" style="vertical-align: 0px" width="18"/>
+      license plate designs he's seen exactly
+      <img alt="$17$" class="latex" height="12" src="//latex.artofproblemsolving.com/b/7/6/b7616a230c77f0d9a577e5bca01aa06f1c35c457.png" style="vertical-align: 0px" width="18"/>
+      times, but of Alexis's
+      <img alt="$2009$" class="latex" height="12" src="//latex.artofproblemsolving.com/8/5/7/85727a3ea4f5d7ba25bc591590b0e085bca557b1.png" width="35"/>
+      license plates, there's none she's seen exactly
+      <img alt="$18$" class="latex" height="13" src="//latex.artofproblemsolving.com/5/e/7/5e7a1b6098a8c98b8e4adae526aeef4b91712620.png" style="vertical-align: 0px" width="17"/>
+      times.  Clearly,
+      <img alt="$17$" class="latex" height="12" src="//latex.artofproblemsolving.com/b/7/6/b7616a230c77f0d9a577e5bca01aa06f1c35c457.png" style="vertical-align: 0px" width="18"/>
+      is the specialist number."
+     </img>
+    </p>
+    <p>
+     Michael, suspicious, pulls out the
+     <i>
+      Almanac of American License Plates
+     </i>
+     and notes, "According to confirmed demographic statistics, you'd only expect those numbers to be
+     <img alt="$5.4$" class="latex" height="13" src="//latex.artofproblemsolving.com/4/2/e/42e7fc69c55635d9a84f28c3fea95d5d6f1b2d9a.png" style="vertical-align: 0px" width="23"/>
+     and
+     <img alt="$4.9$" class="latex" height="13" src="//latex.artofproblemsolving.com/1/2/5/1252d0e319cfc94d5841e5c251b0196b1dcda262.png" style="vertical-align: 0px" width="22"/>
+     , respectively.  But the
+     <img alt="$17^\text{th}$" class="latex" height="16" src="//latex.artofproblemsolving.com/8/4/1/8412151da7006a817402c73b82028b5da5abddb2.png" style="vertical-align: 0px" width="30"/>
+     state is weird: Joshua saw exactly
+     <img alt="$17$" class="latex" height="12" src="//latex.artofproblemsolving.com/b/7/6/b7616a230c77f0d9a577e5bca01aa06f1c35c457.png" style="vertical-align: 0px" width="18"/>
+     of its license plates, which isn't what we'd expect."
+    </p>
+    <p>
+     Alexis asks, "How many Ohioan license plates did we expect to see?" and reaches for the
+     <i>
+      Almanac
+     </i>
+     to find out, but Michael snatches it away and says, "I'm not telling."
+    </p>
+    <p>
+     Alexis, disappointed, says, "I suppose that
+     <img alt="$17$" class="latex" height="12" src="//latex.artofproblemsolving.com/b/7/6/b7616a230c77f0d9a577e5bca01aa06f1c35c457.png" style="vertical-align: 0px" width="18"/>
+     is my best guess," feeling that the answer must be pretty close to
+     <img alt="$17$" class="latex" height="12" src="//latex.artofproblemsolving.com/b/7/6/b7616a230c77f0d9a577e5bca01aa06f1c35c457.png" style="vertical-align: 0px" width="18"/>
+     .
+    </p>
+    <p>
+     Wendy smiles.  "You can do better than that, actually.  Given what Michael said and that we saw
+     <img alt="$17$" class="latex" height="12" src="//latex.artofproblemsolving.com/b/7/6/b7616a230c77f0d9a577e5bca01aa06f1c35c457.png" style="vertical-align: 0px" width="18"/>
+     Ohioan license plates, we'd actually expect there to have been
+     <img alt="$\frac{a}{b}$" class="latex" height="33" src="//latex.artofproblemsolving.com/0/8/4/084079bf1d54500f3c59257a7ec3467932b72ba2.png" style="vertical-align: -12px" width="12"/>
+     less than
+     <img alt="$17$" class="latex" height="12" src="//latex.artofproblemsolving.com/b/7/6/b7616a230c77f0d9a577e5bca01aa06f1c35c457.png" style="vertical-align: 0px" width="18"/>
+     ."
+    </p>
+    <p>
+     Help Alexis.  If
+     <img alt="$\frac{a}{b}$" class="latex" height="33" src="//latex.artofproblemsolving.com/0/8/4/084079bf1d54500f3c59257a7ec3467932b72ba2.png" style="vertical-align: -12px" width="12"/>
+     is in lowest terms, find the product
+     <img alt="$ab$" class="latex" height="12" src="//latex.artofproblemsolving.com/e/f/8/ef870ce9fefe09b80a97b05a7b9198414c1b35f7.png" width="17"/>
+     .
+    </p>
+    <h2>
+     <span class="mw-headline" id="See_Also">
+      See Also
+     </span>
+    </h2>
+    <table class="wikitable" style="clear:both; margin:0.5em auto; font-size:95%; border:1px solid black;">
+     <tbody>
+      <tr>
+       <td colspan="3" style="background:#ccf;text-align:center;">
+        <b>
+         <a href="/wiki/index.php/2008_iTest" title="2008 iTest">
+          2008 iTest
+         </a>
+         <a href="/wiki/index.php/2008_iTest_Problems" title="2008 iTest Problems">
+          (Problems)
+         </a>
+        </b>
+       </td>
+      </tr>
+      <tr>
+       <td align="center" rowspan="1" width="50%">
+        Preceded by:
+        <br/>
+        <b>
+         <a href="/wiki/index.php/2008_iTest_Problems/Problem_94" title="2008 iTest Problems/Problem 94">
+          Problem 94
+         </a>
+        </b>
+       </td>
+       <td align="center" rowspan="1" width="50%">
+        Followed by:
+        <br/>
+        <b>
+         <a href="/wiki/index.php/2008_iTest_Problems/Problem_96" title="2008 iTest Problems/Problem 96">
+          Problem 96
+         </a>
+        </b>
+       </td>
+      </tr>
+      <tr>
+       <td colspan="3">
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_1" title="2008 iTest Problems/Problem 1">
+         1
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_2" title="2008 iTest Problems/Problem 2">
+         2
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_3" title="2008 iTest Problems/Problem 3">
+         3
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_4" title="2008 iTest Problems/Problem 4">
+         4
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_5" title="2008 iTest Problems/Problem 5">
+         5
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_6" title="2008 iTest Problems/Problem 6">
+         6
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_7" title="2008 iTest Problems/Problem 7">
+         7
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_8" title="2008 iTest Problems/Problem 8">
+         8
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_9" title="2008 iTest Problems/Problem 9">
+         9
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_10" title="2008 iTest Problems/Problem 10">
+         10
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_11" title="2008 iTest Problems/Problem 11">
+         11
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_12" title="2008 iTest Problems/Problem 12">
+         12
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_13" title="2008 iTest Problems/Problem 13">
+         13
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_14" title="2008 iTest Problems/Problem 14">
+         14
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_15" title="2008 iTest Problems/Problem 15">
+         15
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_16" title="2008 iTest Problems/Problem 16">
+         16
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_17" title="2008 iTest Problems/Problem 17">
+         17
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_18" title="2008 iTest Problems/Problem 18">
+         18
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_19" title="2008 iTest Problems/Problem 19">
+         19
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_20" title="2008 iTest Problems/Problem 20">
+         20
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_21" title="2008 iTest Problems/Problem 21">
+         21
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_22" title="2008 iTest Problems/Problem 22">
+         22
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_23" title="2008 iTest Problems/Problem 23">
+         23
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_24" title="2008 iTest Problems/Problem 24">
+         24
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_25" title="2008 iTest Problems/Problem 25">
+         25
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_26" title="2008 iTest Problems/Problem 26">
+         26
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_27" title="2008 iTest Problems/Problem 27">
+         27
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_28" title="2008 iTest Problems/Problem 28">
+         28
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_29" title="2008 iTest Problems/Problem 29">
+         29
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_30" title="2008 iTest Problems/Problem 30">
+         30
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_31" title="2008 iTest Problems/Problem 31">
+         31
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_32" title="2008 iTest Problems/Problem 32">
+         32
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_33" title="2008 iTest Problems/Problem 33">
+         33
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_34" title="2008 iTest Problems/Problem 34">
+         34
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_35" title="2008 iTest Problems/Problem 35">
+         35
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_36" title="2008 iTest Problems/Problem 36">
+         36
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_37" title="2008 iTest Problems/Problem 37">
+         37
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_38" title="2008 iTest Problems/Problem 38">
+         38
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_39" title="2008 iTest Problems/Problem 39">
+         39
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_40" title="2008 iTest Problems/Problem 40">
+         40
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_41" title="2008 iTest Problems/Problem 41">
+         41
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_42" title="2008 iTest Problems/Problem 42">
+         42
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_43" title="2008 iTest Problems/Problem 43">
+         43
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_44" title="2008 iTest Problems/Problem 44">
+         44
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_45" title="2008 iTest Problems/Problem 45">
+         45
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_46" title="2008 iTest Problems/Problem 46">
+         46
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_47" title="2008 iTest Problems/Problem 47">
+         47
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_48" title="2008 iTest Problems/Problem 48">
+         48
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_49" title="2008 iTest Problems/Problem 49">
+         49
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_50" title="2008 iTest Problems/Problem 50">
+         50
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_51" title="2008 iTest Problems/Problem 51">
+         51
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_52" title="2008 iTest Problems/Problem 52">
+         52
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_53" title="2008 iTest Problems/Problem 53">
+         53
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_54" title="2008 iTest Problems/Problem 54">
+         54
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_55" title="2008 iTest Problems/Problem 55">
+         55
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_56" title="2008 iTest Problems/Problem 56">
+         56
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_57" title="2008 iTest Problems/Problem 57">
+         57
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_58" title="2008 iTest Problems/Problem 58">
+         58
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_59" title="2008 iTest Problems/Problem 59">
+         59
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_60" title="2008 iTest Problems/Problem 60">
+         60
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_61" title="2008 iTest Problems/Problem 61">
+         61
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_62" title="2008 iTest Problems/Problem 62">
+         62
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_63" title="2008 iTest Problems/Problem 63">
+         63
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_64" title="2008 iTest Problems/Problem 64">
+         64
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_65" title="2008 iTest Problems/Problem 65">
+         65
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_66" title="2008 iTest Problems/Problem 66">
+         66
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_67" title="2008 iTest Problems/Problem 67">
+         67
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_68" title="2008 iTest Problems/Problem 68">
+         68
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_69" title="2008 iTest Problems/Problem 69">
+         69
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_70" title="2008 iTest Problems/Problem 70">
+         70
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_71" title="2008 iTest Problems/Problem 71">
+         71
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_72" title="2008 iTest Problems/Problem 72">
+         72
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_73" title="2008 iTest Problems/Problem 73">
+         73
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_74" title="2008 iTest Problems/Problem 74">
+         74
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_75" title="2008 iTest Problems/Problem 75">
+         75
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_76" title="2008 iTest Problems/Problem 76">
+         76
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_77" title="2008 iTest Problems/Problem 77">
+         77
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_78" title="2008 iTest Problems/Problem 78">
+         78
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_79" title="2008 iTest Problems/Problem 79">
+         79
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_80" title="2008 iTest Problems/Problem 80">
+         80
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_81" title="2008 iTest Problems/Problem 81">
+         81
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_82" title="2008 iTest Problems/Problem 82">
+         82
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_83" title="2008 iTest Problems/Problem 83">
+         83
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_84" title="2008 iTest Problems/Problem 84">
+         84
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_85" title="2008 iTest Problems/Problem 85">
+         85
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_86" title="2008 iTest Problems/Problem 86">
+         86
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_87" title="2008 iTest Problems/Problem 87">
+         87
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_88" title="2008 iTest Problems/Problem 88">
+         88
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_89" title="2008 iTest Problems/Problem 89">
+         89
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_90" title="2008 iTest Problems/Problem 90">
+         90
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_91" title="2008 iTest Problems/Problem 91">
+         91
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_92" title="2008 iTest Problems/Problem 92">
+         92
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_93" title="2008 iTest Problems/Problem 93">
+         93
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_94" title="2008 iTest Problems/Problem 94">
+         94
+        </a>
+        <b>
+         •
+        </b>
+        <a class="mw-selflink selflink">
+         95
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_96" title="2008 iTest Problems/Problem 96">
+         96
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_97" title="2008 iTest Problems/Problem 97">
+         97
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_98" title="2008 iTest Problems/Problem 98">
+         98
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_99" title="2008 iTest Problems/Problem 99">
+         99
+        </a>
+        <b>
+         •
+        </b>
+        <a href="/wiki/index.php/2008_iTest_Problems/Problem_100" title="2008 iTest Problems/Problem 100">
+         100
+        </a>
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <!-- 
+NewPP limit report
+Cached time: 20210503150139
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.059 seconds
+Real time usage: 0.062 seconds
+Preprocessor visited node count: 171/1000000
+Preprocessor generated node count: 420/1000000
+Post‐expand include size: 5242/2097152 bytes
+Template argument size: 8/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 2864/5000000 bytes
+-->
+    <!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    3.583      1 Template:2008_iTest_box
+100.00%    3.583      1 -total
+-->
+   </li>
+   <li>
+    <hr/>
+    2010 AMC 12A Problems/Problem 18
+    <p>
+     A 16-step path is to go from
+     <img alt="$(-4,-4)$" class="latex" height="18" src="//latex.artofproblemsolving.com/c/e/f/cef2b7d99e90cfb5dc7207ff32b7d3d28849b83c.png" style="vertical-align: -4px" width="67">
+      to
+      <img alt="$(4,4)$" class="latex" height="18" src="//latex.artofproblemsolving.com/9/e/7/9e74a8a996f28bdc445eb3beaf3c3f14594eac27.png" style="vertical-align: -4px" width="38"/>
+      with each step increasing either the
+      <img alt="$x$" class="latex" height="8" src="//latex.artofproblemsolving.com/2/6/e/26eeb5258ca5099acf8fe96b2a1049c48c89a5e6.png" width="10"/>
+      -coordinate or the
+      <img alt="$y$" class="latex" height="11" src="//latex.artofproblemsolving.com/0/9/2/092e364e1d9d19ad5fffb0b46ef4cc7f2da02c1c.png" style="vertical-align: -3px" width="9"/>
+      -coordinate by 1. How many such paths stay outside or on the boundary of the square
+      <img alt="$-2 \le x \le 2$" class="latex" height="14" src="//latex.artofproblemsolving.com/0/9/9/0990994305c433d76ef6c22a3203dcfa9378b7fc.png" style="vertical-align: -2px" width="90"/>
+      ,
+      <img alt="$-2 \le y \le 2$" class="latex" height="15" src="//latex.artofproblemsolving.com/b/6/3/b63a9e77f2f7af0d80a4bc97d9c3ef4f8ba15156.png" style="vertical-align: -3px" width="90"/>
+      at each step?
+     </img>
+    </p>
+    <p>
+     <img alt="$\textbf{(A)}\ 92 \qquad \textbf{(B)}\ 144 \qquad \textbf{(C)}\ 1568 \qquad \textbf{(D)}\ 1698 \qquad \textbf{(E)}\ 12,800$" class="latex" height="17" src="//latex.artofproblemsolving.com/c/6/d/c6dade1d73d3bab8db4f4d8e44b25b8e399b6fa2.png" style="vertical-align: -4px" width="474"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2004 AMC 10A Problems/Problem 10
+    <p>
+     Coin
+     <img alt="$A$" class="latex" height="13" src="//latex.artofproblemsolving.com/0/1/9/019e9892786e493964e145e7c5cf7b700314e53b.png" width="13">
+      is flipped three times and coin
+      <img alt="$B$" class="latex" height="12" src="//latex.artofproblemsolving.com/f/f/5/ff5fb3d775862e2123b007eb4373ff6cc1a34d4e.png" width="14"/>
+      is flipped four times.  What is the probability that the number of heads obtained from flipping the two fair coins is the same?
+     </img>
+    </p>
+    <p>
+     <img alt="$\mathrm{(A) \ } \frac{29}{128} \qquad \mathrm{(B) \ } \frac{23}{128} \qquad \mathrm{(C) \ } \frac14 \qquad \mathrm{(D) \ } \frac{35}{128} \qquad \mathrm{(E) \ } \frac12$" class="latex" height="38" src="//latex.artofproblemsolving.com/d/8/a/d8a096284c365c007eacff98c81f92ec2d39401a.png" style="vertical-align: -13px" width="415"/>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2005 AIME II Problems/Problem 1
+    <p>
+     A game uses a deck of
+     <img alt="$n$" class="latex" height="8" src="//latex.artofproblemsolving.com/1/7/4/174fadd07fd54c9afe288e96558c92e0c1da733a.png" width="10">
+      different cards, where
+      <img alt="$n$" class="latex" height="8" src="//latex.artofproblemsolving.com/1/7/4/174fadd07fd54c9afe288e96558c92e0c1da733a.png" width="10"/>
+      is an integer and
+      <img alt="$n \geq 6.$" class="latex" height="15" src="//latex.artofproblemsolving.com/9/e/3/9e379c6fee7b1248e81a4e5882f92066a79517aa.png" style="vertical-align: -2px" width="47"/>
+      The number of possible sets of 6 cards that can be drawn from the deck is 6 times the number of possible sets of 3 cards that can be drawn. Find
+      <img alt="$n.$" class="latex" height="8" src="//latex.artofproblemsolving.com/b/d/9/bd923e41635af40a1abe58f230732f2280b0723a.png" width="14"/>
+     </img>
+    </p>
+   </li>
+   <li>
+    <hr/>
+    2011 AMC 10A Problems/Problem 21
+    <p>
+     Two counterfeit coins of equal weight are mixed with
+     <img alt="$8$" class="latex" height="12" src="//latex.artofproblemsolving.com/8/4/5/8455f3b5cb3b4880b8c9d782a5c1f0334db819eb.png" width="8">
+      identical genuine coins. The weight of each of the counterfeit coins is different from the weight of each of the genuine coins. A pair of coins is selected at random without replacement from the
+      <img alt="$10$" class="latex" height="13" src="//latex.artofproblemsolving.com/f/c/6/fc606f7f1e530731ab4f1cc364c01dc64a4455ee.png" style="vertical-align: 0px" width="17"/>
+      coins. A second pair is selected at random without replacement from the remaining
+      <img alt="$8$" class="latex" height="12" src="//latex.artofproblemsolving.com/8/4/5/8455f3b5cb3b4880b8c9d782a5c1f0334db819eb.png" width="8"/>
+      coins. The combined weight of the first pair is equal to the combined weight of the second pair. What is the probability that all
+      <img alt="$4$" class="latex" height="12" src="//latex.artofproblemsolving.com/c/7/c/c7cab1a05e1e0c1d51a6a219d96577a16b7abf9d.png" style="vertical-align: 0px" width="9"/>
+      selected coins are genuine?
+     </img>
+    </p>
+    <p>
+     <img alt="$\textbf{(A)}\ \frac{7}{11}\qquad\textbf{(B)}\ \frac{9}{13}\qquad\textbf{(C)}\ \frac{11}{15}\qquad\textbf{(D)}\ \frac{15}{19}\qquad\textbf{(E)}\ \frac{15}{16}$" class="latex" height="38" src="//latex.artofproblemsolving.com/f/5/c/f5c10b21992ae4d8872fa4efcecb3fd19dc3c4fd.png" style="vertical-align: -13px" width="413"/>
+    </p>
+   </li>
+  </ol>
+ </body>
+</html>
